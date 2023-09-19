@@ -29,6 +29,13 @@
             </div>
         </div>
     </div>
+    <div class="decor_bot">
+        <div class="decor_bot_inner">
+            <div class="free_image balls">
+                <img src="img/balls.png" alt="">
+            </div>
+        </div>
+    </div>
     <div class="content">
         <div class="header_wrapper">
             <img src="img/header.svg" class="header">
@@ -37,11 +44,11 @@
             <div class="free_image">
                 <img src="img/light.png" alt="">
             </div>
-            <div class="free_image spinner">
+            <div class="free_image spinner" id="spinner">
                 <img src="img/spinner.svg" alt="">
             </div>
             <div class="free_image">
-                <img src="img/spinner_decor.svg" alt="">
+                <img src="img/spinDecor.png" alt="">
             </div>
         </div>
 
@@ -77,6 +84,11 @@
             Забрать бонус
         </button>
     </div>
+    <script>
+        document.getElementById('takeBonus').onclick = () => {
+            document.getElementById('spinner').classList.add('spinning')
+        }
+    </script>
 </body>
 
 </html>

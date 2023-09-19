@@ -97,14 +97,39 @@ body{
         }
     }
 }
+.decor_bot{
+    width: 0px;
+    height: 0px;
+    &_inner{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        overflow: hidden;
+        .balls{
+            top: -30px;
+            z-index: -2;
+            left: -100px;
+            @media (min-width: 1000px) {
+                top: -50px;
+                left: -300px;
+            }
+            img{
+                width: 200px;
+                @media (min-width: 1000px) {
+                    width: 300px;
+                }
+                }
+        }
+    }
+}
 .spinner{
     img{
         width: 240px;
-        margin-left: -9px;
         @media (min-width: 500px) {
             width: 408px;
             height: 500px;
-            margin-left: -13px;
         }
     }
     &_block{
@@ -226,5 +251,48 @@ body{
         top: 550px;
         backdrop-filter: none;
         background: none;
+    }
+}
+
+.spinning{
+    animation: 
+    spin_animation_1 2s ease-in forwards, 
+    spin_animation_2 2s 2s linear forwards, 
+    spin_animation_3 5s 4s cubic-bezier(0.12, 0.58, 0.5, 1.05) forwards, 
+    spin_animation_4 1s 9s cubic-bezier(0.26, 0.64, 0.63, 1.2) forwards;
+}
+// 2оборота - 18тиков
+@keyframes spin_animation_1 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(855deg);
+    }
+}
+// 3оборота - 27 тиков
+@keyframes spin_animation_2 {
+    0%{
+        transform: rotate(855deg);
+    }
+    100%{
+        transform: rotate(1935deg);
+    }
+}
+// меньше 2оборотов - 15 тиков
+@keyframes spin_animation_3 {
+    0%{
+        transform: rotate(1935deg);
+    }
+    100%{
+        transform: rotate(2605deg);
+    }
+}
+@keyframes spin_animation_4 {
+    0%{
+        transform: rotate(2605deg);
+    }
+    100%{
+        transform: rotate(2601deg);
     }
 }
